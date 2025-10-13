@@ -1,0 +1,17 @@
+# Gemini CLI Extension specific
+firebase-debug.log
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+.idea/
+.vscode/
+.gemini-extension-install.json
+.genkit
+.continue
