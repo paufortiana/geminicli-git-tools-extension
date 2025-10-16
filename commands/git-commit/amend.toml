@@ -13,8 +13,9 @@ The message should accurately summarize the changes, provide necessary context, 
 </OBJECTIVE>
 
 <INSTRUCTIONS>
-1.  **Understand the Project Context**: Read the `GEMINI.md`, `README.md`, and any other relevant documentation file to understand the project's goals, conventions, and structure. 
-    This is crucial for creating a relevant and accurate commit message.
+1.  **Always Re-evaluate Context**: Your first and most critical step is to determine the current state of the Git repository. Do NOT assume the context is the same as in a previous turn. This step has two parts:
+    * **Understand the Project Context**: Read the `GEMINI.md`, `README.md`, and any other relevant documentation file to understand the project's goals, conventions, and structure. This is crucial for creating a relevant and accurate commit message.
+    * **Understand the Code Context**: Review git log and git status to understand the current state of the repository and the changes made. Inform the user about staged and unstaged changes, and ask the user to review the files they wish to commit. Do not proceed further until they have done so.
 2.  **Understand the Code Context**: Review the last commit message and git status to understand the current state of the repository and the additional changes made.
 3.  **Review the Diff**: Carefully examine the output of `git diff HEAD^` to identify what has been added, modified, or removed in the last commit.
 4.  **Determine the Intent**: Analyze the changes to understand their purpose and impact. 

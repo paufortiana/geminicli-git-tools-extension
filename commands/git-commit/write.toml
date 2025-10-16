@@ -10,12 +10,12 @@ Your primary goal is to analyze the provided code changes (diff content) and com
 </OBJECTIVE>
 
 <INSTRUCTIONS>
-1.  **Understand the Project Context**: Read the `GEMINI.md`, `README.md`, and any other relevant documentation file to understand the project's goals, conventions, and structure. 
-    This is crucial for creating a relevant and accurate commit message.
-2.  **Understand the Code Context**: Review git log and git status to understand the current state of the repository and the changes made. Ask the user for unstaged changes if necessary.
-3.  **Review the Diff**: Carefully examine the output of `git diff --staged` to identify what has been added, modified, or removed.
-4.  **Determine the Intent**: Analyze the changes to understand their purpose and impact. Are they fixing a bug, adding a feature, improving performance, refactoring code, updating documentation, or something else?
-5.  **Classify the Change**: Based on your analysis, classify the change according to the Conventional Commits types. The most common types are:
+1.  **Always Re-evaluate Context**: Your first and most critical step is to determine the current state of the Git repository. Do NOT assume the context is the same as in a previous turn. This step has two parts:
+    * **Understand the Project Context**: Read the `GEMINI.md`, `README.md`, and any other relevant documentation file to understand the project's goals, conventions, and structure. This is crucial for creating a relevant and accurate commit message.
+    * **Understand the Code Context**: Review git log and git status to understand the current state of the repository and the changes made. Inform the user about staged and unstaged changes, and ask the user to review the files they wish to commit. Do not proceed further until they have done so.
+2.  **Review the Diff**: Carefully examine the output of `git diff --staged` to identify what has been added, modified, or removed.
+3.  **Determine the Intent**: Analyze the changes to understand their purpose and impact. Are they fixing a bug, adding a feature, improving performance, refactoring code, updating documentation, or something else?
+4.  **Classify the Change**: Based on your analysis, classify the change according to the Conventional Commits types. The most common types are:
     * **feat**: A new feature for the user.
     * **fix**: A bug fix for the user.
     * **docs**: Documentation only changes.
@@ -26,14 +26,14 @@ Your primary goal is to analyze the provided code changes (diff content) and com
     * **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation.
     * **ci**: Changes to CI configuration files and scripts.
     * **revert**: Reverts a previous commit.
-6.  **Draft the Commit Message**: Construct a commit message, following best practices for clarity and conciseness, that includes:
+5.  **Draft the Commit Message**: Construct a commit message, following best practices for clarity and conciseness, that includes:
     * **Subject Line**: `type(scope): imperative, short description (max 50 characters)`
         * `type`: The type of change (e.g., `feat`, `fix`).
         * `(scope)`: Optional. A noun describing the section of the codebase affected.
         * `description`: A concise, present-tense, imperative mood description (e.g., "add," "fix," "change," not "added," "fixes," "changed").
     * **Body (Optional)**: Provide more context, explaining the "what" and "why" of the change. Use a blank line to separate the body from the subject.
     * **Footer (Optional)**: Include references to issues if applicable (e.g., `Fixes #123`) or breaking changes if it is a breaking change (`BREAKING CHANGE:`).
-7.  **Present the Message**: Output the final commit message to the user, formatted and ready to be used in a `git commit` command. Ask for confirmation before proceeding.
+6.  **Present the Message**: Output the final commit message to the user, formatted and ready to be used in a `git commit` command. Ask for confirmation before proceeding.
 </INSTRUCTIONS>     
 
 <CRITICAL_CONSTRAINTS>
