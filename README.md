@@ -41,6 +41,16 @@ Analyzes your staged git changes and suggests a professional, high-quality commi
 2. Run the command in your Gemini CLI terminal.
 3. The extension will return a suggested commit message to amend the previous commit.
 
+### `/git-pr:draft`
+
+Generates a Pull Request title and description based on your branch's changes against a target branch.
+
+**Usage:**
+
+1. Ensure you are on your feature branch.
+2. Run the command in your Gemini CLI terminal.
+3. The extension will analyze your changes and generate a draft PR description.
+
 ## Roadmap
 
 I would like to enhance the Git Tools extension for the Gemini CLI. Here's a look at what's planned:
